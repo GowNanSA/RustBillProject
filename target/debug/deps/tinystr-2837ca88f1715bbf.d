@@ -1,0 +1,12 @@
+C:\Users\nanda\GitReposHere\BankProj1\target\debug\deps\libtinystr-2837ca88f1715bbf.rmeta: C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\lib.rs C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\macros.rs C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\ascii.rs C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\asciibyte.rs C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\error.rs C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\int_ops.rs C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\unvalidated.rs C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\ule.rs
+
+C:\Users\nanda\GitReposHere\BankProj1\target\debug\deps\tinystr-2837ca88f1715bbf.d: C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\lib.rs C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\macros.rs C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\ascii.rs C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\asciibyte.rs C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\error.rs C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\int_ops.rs C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\unvalidated.rs C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\ule.rs
+
+C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\lib.rs:
+C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\macros.rs:
+C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\ascii.rs:
+C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\asciibyte.rs:
+C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\error.rs:
+C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\int_ops.rs:
+C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\unvalidated.rs:
+C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tinystr-0.8.1\src\ule.rs:
