@@ -1,0 +1,7 @@
+C:\Users\nanda\GitReposHere\BankProj1\target\debug\deps\libatomic_waker-166dc9ccca165354.rmeta: C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\atomic-waker-1.1.2\src\lib.rs
+
+C:\Users\nanda\GitReposHere\BankProj1\target\debug\deps\libatomic_waker-166dc9ccca165354.rlib: C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\atomic-waker-1.1.2\src\lib.rs
+
+C:\Users\nanda\GitReposHere\BankProj1\target\debug\deps\atomic_waker-166dc9ccca165354.d: C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\atomic-waker-1.1.2\src\lib.rs
+
+C:\Users\nanda\.cargo\registry\src\index.crates.io-6f17d22bba15001f\atomic-waker-1.1.2\src\lib.rs:
