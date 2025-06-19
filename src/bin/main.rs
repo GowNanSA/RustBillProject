@@ -37,6 +37,10 @@ impl Bills{
         self.inner.values().collect() 
         //iterate and collect the bills, takes the values  
     }
+     // takes out of hashmap 
+    fn remove(&mut self, name: &str) -> bool{
+        self.inner.remove(name).is_some(); // remove if it is found some bill 
+    }
 }
 // user input function 
 fn user_input () -> Option<String>{
@@ -53,10 +57,7 @@ fn user_input () -> Option<String>{
         Some(input)
     }
     
-    // takes out of hashmap 
-    fn remove(&mut self, name: &str) -> bool{
-        self.inner.remove(name).is_some(); // remove if it is found some bill 
-    }
+   
 }
 
 // main menu 
