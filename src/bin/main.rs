@@ -9,7 +9,7 @@ use crate::menu::view_bills;
 #[derive(Debug)]
 pub struct Bill{
     name:String,
-    amount: f64
+    amount:f64
 }
 
 pub struct Bills{
@@ -39,8 +39,19 @@ impl Bills{
     }
      // takes out of hashmap 
     fn remove(&mut self, name: &str) -> bool{
-        self.inner.remove(name).is_some(); // remove if it is found some bill 
+        self.inner.remove(name).is_some() // remove if it is found some bill 
     }
+    
+    // return bool 
+    fn update(&mut self, name: &str, amount:f64) -> bool{
+        match self.inner.get_mut(name){
+            Some(bill) => {
+                bill.amount = amount;
+                true
+            }
+            None => false,
+        }
+    } 
 }
 // user input function 
 fn user_input () -> Option<String>{
@@ -56,15 +67,14 @@ fn user_input () -> Option<String>{
     else{
         Some(input)
     }
-    
-   
 }
 
 // main menu 
 enum Menu{
     Add,
     View,
-    Remove
+    Remove,
+    Update
 }
 
 // module for menu 
@@ -117,6 +127,32 @@ mod menu{
             println!("{:?}", bill);
         }
     }
+
+    pub fn update_bill(bills: &mut Bills){
+         for bill in bills.get_all(){
+            println!("{:?}", bill); 
+        }
+        println!("Enter name to update: "); 
+
+        // user input 
+        let name = match user_input(){
+            Some(name) => name,
+            None => return,
+        };
+
+        let amount = match convert_bill(){
+            Some(amount) => amount,
+            None => return,
+        };
+        if bills.update(&name, amount){
+            println!("bill updated");
+
+        }
+        else{
+            println!("bill not found"); 
+        }
+
+    }
     
 }
 // convert string to float 
@@ -150,31 +186,58 @@ impl Menu{
             "1" => Some(Self::Add),
             "2" => Some(Self::View),
             "3" => Some(Self::Remove),
+            "4" => Some(Self::Update),
             _ => None, 
         }
     }
 
     fn show_menu(){
         println!("\nMENU FOR BILLS");
-        println!("1 - add \n2 - view \n3- remove \nEnter your choice: ");
+        println!("1 - add \n2 - view \n3- remove \n4- update \npress enter to end \nEnter your choice: ");
 
     }
 }
-fn main() {
+// prgoram to run it and use ? operator bc ? cant be used in main
+fn run_program() -> Option<()>{
     // loop and actions 
     // bills 
     let mut bills = Bills::new();
     loop{
         // display
         Menu::show_menu();
-        let input = user_input().expect("none");
+        let input = user_input()?;
         match Menu::from_str(input.as_str()){
             // choice
             Some(Menu::Add) =>menu::add_bill(&mut bills),
             Some(Menu::View) => menu::view_bills(&bills),
             Some(Menu::Remove) => menu::remove_bill(&mut bills),
+            Some(Menu::Update) => menu::update_bill(&mut bills),
+            None => break, 
+        }        
+    }
+    None // keep it running untl while it is running 
+}
+
+fn main() {
+
+    run_program();
+    /* 
+    // loop and actions 
+    // bills 
+    let mut bills = Bills::new();
+    loop{
+        // display
+        Menu::show_menu();
+        let input = user_input().expect("No data entered");
+        match Menu::from_str(input.as_str()){
+            // choice
+            Some(Menu::Add) =>menu::add_bill(&mut bills),
+            Some(Menu::View) => menu::view_bills(&bills),
+            Some(Menu::Remove) => menu::remove_bill(&mut bills),
+            Some(Menu::Update) => menu::update_bill(&mut bills),
             None => return, 
         }        
 
     }
+    */
 }
