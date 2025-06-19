@@ -3,9 +3,9 @@
 
 
 use std::io;
+use std::collections::HashMap;
 
 use crate::menu::view_bills; 
-
 #[derive(Debug)]
 pub struct Bill{
     name:String,
@@ -13,29 +13,29 @@ pub struct Bill{
 }
 
 pub struct Bills{
-    inner: Vec<Bill>
+    inner: HashMap<String, Bill>, // hashmap to be able to change
 }
 
+// all the functions are here 
 impl Bills{
     fn new() -> Self{
         Self{
-            inner: vec![]
+            inner:HashMap::new() // make it a hashmap
         }
         
     }
-    
     // add bill
     fn add(&mut self, bill: Bill){
         // move the bill into vector
-        self.inner.push(bill);
+        self.inner.insert(bill.name.to_string(), bill);
 
     }
 
     // get all the needed bills borrowed bills 
     fn get_all(&self) -> Vec<&Bill>{
         // borrowed bills 
-        self.inner.iter().collect()
-        //iterate and collect the bills 
+        self.inner.values().collect() 
+        //iterate and collect the bills, takes the values  
     }
 }
 // user input function 
@@ -52,12 +52,18 @@ fn user_input () -> Option<String>{
     else{
         Some(input)
     }
+    
+    // takes out of hashmap 
+    fn remove(&mut self, name: &str) -> bool{
+        self.inner.remove(name).is_some(); // remove if it is found some bill 
+    }
 }
 
 // main menu 
 enum Menu{
     Add,
-    View
+    View,
+    Remove
 }
 
 // module for menu 
@@ -82,7 +88,28 @@ mod menu{
         
     }
 
+    // note &mut bills lets you change the bills 
+    pub fn remove_bill(bills: &mut Bills){
+        for bill in bills.get_all(){
+            println!("{:?}", bill); 
+        }
+        println!("Enter name to remove: "); 
 
+        let name = match user_input(){
+            Some(name) => name,
+            None => return,
+        };
+
+        if bills.remove(&name){
+            println!("bill removed");
+
+        }
+        else{
+            println!("Bruh bill not found"); 
+        }
+    }
+
+    // &bills lets you read bills 
     pub fn view_bills(bills: &Bills){
         for bill in bills.get_all(){
             // get all gives us all the bills collected
@@ -121,13 +148,14 @@ impl Menu{
         match input{
             "1" => Some(Self::Add),
             "2" => Some(Self::View),
+            "3" => Some(Self::Remove),
             _ => None, 
         }
     }
 
     fn show_menu(){
-        println!("\n MENU FOR BILLS");
-        println!("1 - add \n2 - view \n Enter your choice: ");
+        println!("\nMENU FOR BILLS");
+        println!("1 - add \n2 - view \n3- remove \nEnter your choice: ");
 
     }
 }
@@ -143,6 +171,7 @@ fn main() {
             // choice
             Some(Menu::Add) =>menu::add_bill(&mut bills),
             Some(Menu::View) => menu::view_bills(&bills),
+            Some(Menu::Remove) => menu::remove_bill(&mut bills),
             None => return, 
         }        
 
